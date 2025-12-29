@@ -1,5 +1,14 @@
-[gd_scene format=3 uid="uid://bj8k4wjwe0k4h"]
+[gd_scene load_steps=3 format=3 uid="uid://bj8k4wjwe0k4h"]
+
+[ext_resource type="PackedScene" uid="uid://d2n2cagdx4en6" path="res://player.glb" id="1_4flbx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_onrkg"]
 
 [node name="Player" type="CharacterBody3D"]
 
 [node name="Pivot" type="Node3D" parent="."]
+
+[node name="Squid" parent="Pivot" instance=ExtResource("1_4flbx")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_onrkg")
