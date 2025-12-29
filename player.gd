@@ -1,13 +1,16 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
 @export var speed := 10
 @export var fall_acceleration := 75
+var orientation = Transform3D()
 
 var target_velocity := Vector3.ZERO
 
 func _physics_process(delta):
 	var input_direction := Vector3.ZERO
 	
+	#Player input
+
 	if Input.is_action_pressed("move_forward"):
 		input_direction.z -= 1
 	if Input.is_action_pressed("move_back"):
