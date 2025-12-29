@@ -25,6 +25,5 @@ shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 
-[node name="CameraPivot" type="Marker3D" parent="."]
-
-[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 0.9140063, 0.4057, 0, -0.4057, 0.9140063, 0, 2.9817133, 5.106959)
