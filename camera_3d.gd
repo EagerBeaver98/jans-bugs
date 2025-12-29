@@ -3,6 +3,9 @@ extends Camera3D
 @export var orbit_sensitivity := 0.005
 @export var orbit_distance := 8.0
 @export var camera_collision_margin := 0.5  # Distance to maintain from ground
+@export var zoom_sensitivity := 0.5  # How fast scroll wheel changes distance
+@export var min_orbit_distance := 2.0  # Closest zoom
+@export var max_orbit_distance := 20.0  # Farthest zoom
 
 var is_orbiting := false
 var orbit_yaw := 0.0
@@ -24,6 +27,18 @@ func _input(event: InputEvent) -> void:
 			is_orbiting = event.pressed
 			if is_orbiting:
 				last_mouse_pos = get_viewport().get_mouse_position()
+			get_viewport().set_input_as_handled()
+		
+		elif event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			orbit_distance -= zoom_sensitivity
+			orbit_distance = clamp(orbit_distance, min_orbit_distance, max_orbit_distance)
+			_update_orbit_position()
+			get_viewport().set_input_as_handled()
+		
+		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			orbit_distance += zoom_sensitivity
+			orbit_distance = clamp(orbit_distance, min_orbit_distance, max_orbit_distance)
+			_update_orbit_position()
 			get_viewport().set_input_as_handled()
 	
 	elif event is InputEventMouseMotion and is_orbiting:
