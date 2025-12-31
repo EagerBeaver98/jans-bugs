@@ -66,9 +66,12 @@ func _update_orbit_position() -> void:
 	
 	# Check for collision with ground and adjust position if needed
 	var adjusted_offset = _check_ground_collision(orbital_offset)
-	
-	position = adjusted_offset
-	look_at(Vector3.ZERO, Vector3.UP)
+	# Compute the player's global position and set the camera in world space.
+	# Assigning `position` (local) earlier mixed world/local frames which
+	# caused the camera to stop following when the player moved/rotated.
+	var player_world_pos = get_parent().global_position
+	global_position = player_world_pos + adjusted_offset
+	look_at(player_world_pos, Vector3.UP)
 
 
 func _check_ground_collision(offset: Vector3) -> Vector3:
