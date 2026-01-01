@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bj8k4wjwe0k4h"]
 
-[ext_resource type="PackedScene" uid="uid://d2n2cagdx4en6" path="res://player.glb" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://bs8w3vh4iaq3r" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://dst8xdab6gb36" path="res://assets/3D MODELS/Mouse.gltf" id="2_onrkg"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_onrkg"]
 
@@ -10,7 +10,8 @@ script = ExtResource("1_onrkg")
 
 [node name="Pivot" type="Node3D" parent="."]
 
-[node name="Squid" parent="Pivot" instance=ExtResource("1_4flbx")]
+[node name="blockbench_export" parent="Pivot" instance=ExtResource("2_onrkg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23483312, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_onrkg")
