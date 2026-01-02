@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://iba4h1ygx1af"]
+[gd_scene load_steps=7 format=3 uid="uid://iba4h1ygx1af"]
 
 [ext_resource type="PackedScene" uid="uid://bj8k4wjwe0k4h" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://1hv0kbeq6ff3" path="res://camera_3d.gd" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bcpostvq7brch" path="res://monarch.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://b5iqsm3vn0tlb" path="res://dragonfly.tscn" id="4_1bvp3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7dm0k"]
 size = Vector3(600, 1, 600)
@@ -33,3 +34,6 @@ script = ExtResource("2_0xm2m")
 
 [node name="Monarch" parent="." instance=ExtResource("3_h2yge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
+
+[node name="Dragonfly" parent="." instance=ExtResource("4_1bvp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.172114, 0, -8.501684)

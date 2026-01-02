@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5iqsm3vn0tlb"]
+
+[ext_resource type="Texture2D" uid="uid://dr7cwprojkew" path="res://assets/Bugs/Dragon_fly.png" id="1_cydmv"]
+
+[node name="Dragonfly" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.32, 0, 0, 0, 0.32, 0, 0, 0, 0.32, 0, 0.695819, 0)
+billboard = 1
+texture = ExtResource("1_cydmv")
