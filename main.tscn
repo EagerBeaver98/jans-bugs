@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://iba4h1ygx1af"]
+[gd_scene load_steps=6 format=3 uid="uid://iba4h1ygx1af"]
 
 [ext_resource type="PackedScene" uid="uid://bj8k4wjwe0k4h" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://1hv0kbeq6ff3" path="res://camera_3d.gd" id="2_0xm2m"]
@@ -10,6 +10,8 @@ size = Vector3(600, 1, 600)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
 size = Vector3(600, 1, 600)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
 
 [node name="Main" type="Node"]
 
@@ -32,8 +34,8 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 0.90107703, 0.4336591, 0, -0.4336591, 0.90107703, 0, 3.46, 6.88)
 script = ExtResource("2_0xm2m")
 
-[node name="Monarch" parent="." instance=ExtResource("3_h2yge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
+[node name="Test Box" type="StaticBody3D" parent="."]
 
-[node name="Dragonfly" parent="." instance=ExtResource("4_1bvp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.172114, 0, -8.501684)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Test Box"]
+transform = Transform3D(3.79, 0, 0, 0, 3.79, 0, 0, 0, 3.79, 0, 1.5178838, -8.530064)
+mesh = SubResource("BoxMesh_0xm2m")

@@ -20,8 +20,8 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_right"):
 		input_direction.x += 1
 	var jump_impulse := 0.0
-	if Input.is_action_pressed("jump"):
-		jump_impulse = 3.0
+	if Input.is_action_pressed("jump") && is_on_floor():
+		jump_impulse = 30.0
 
 	# Compute camera-relative movement so "forward" moves away from camera
 	var move_dir := Vector3.ZERO
@@ -48,11 +48,12 @@ func _physics_process(delta):
 	target_velocity.z = move_dir.z * speed
 
 	# Vertical (jump/fall)
-	target_velocity.y = jump_impulse
-
-	#Vertical velocity
+	if jump_impulse > 0:
+		target_velocity.y = jump_impulse
+	
+	# Apply gravity when airborne
 	if not is_on_floor():
-		target_velocity.y = target_velocity.y - (fall_acceleration * delta)
+		target_velocity.y -= fall_acceleration * delta
 
 	
 	#Moving the character
