@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcpostvq7brch"]
+
+[ext_resource type="Texture2D" uid="uid://71nbkmo4nu5i" path="res://assets/Bugs/Monarch.png" id="1_0hwse"]
+
+[node name="Monarch" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.32, 0, 0, 0, 0.32, 0, 0, 0, 0.32, 0, 0.695819, 0)
+billboard = 1
+texture = ExtResource("1_0hwse")
