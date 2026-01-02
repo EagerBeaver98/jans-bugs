@@ -71,7 +71,7 @@ func _update_orbit_position() -> void:
 	# caused the camera to stop following when the player moved/rotated.
 	var player_world_pos = get_parent().global_position
 	global_position = player_world_pos + adjusted_offset
-	look_at(player_world_pos, Vector3.UP)
+	look_at(player_world_pos + Vector3(0, 1, 0), Vector3.UP)
 
 
 func _check_ground_collision(offset: Vector3) -> Vector3:
