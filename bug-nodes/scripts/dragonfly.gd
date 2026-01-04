@@ -1,7 +1,7 @@
 extends Sprite3D
 
-var bug_name: String = "Unnamed Bug"
-var bug_spawn_location: String = "Unknown"
+var bug_name: String = "Dragonfly"
+var bug_spawn_location: String = "Swamp"
 var bug_size: float = 1.0
 
 
