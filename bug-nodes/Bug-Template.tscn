@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cflfj5d8htkbl"]
+
+[node name="BugTemplate" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 1
